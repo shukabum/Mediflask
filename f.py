@@ -33,9 +33,9 @@ def extract_text_from_pdf(file_data):
     return text
 @app.route('/')
 def start():
-    return render_template("hello")
+    return "hello"
 @app.route('/dummy')
-def start():
+def dummy():
     return render_template("index.html")
 
 
