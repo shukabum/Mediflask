@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from werkzeug.utils import secure_filename
 import os
 import fitz  # PyMuPDF for extracting text from PDF
@@ -31,6 +31,9 @@ def extract_text_from_pdf(file_data):
         for page in pdf:
             text += page.get_text()
     return text
+@app.route('/')
+def start():
+    return render_template("index.html")
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
