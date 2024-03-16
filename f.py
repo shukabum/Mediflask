@@ -39,7 +39,7 @@ def dummy():
     return render_template("index.html")
 
 
-@app.route('/upload', methods=['POST'])
+@app.route('/upload', methods=['GET', 'POST'])
 def upload_file():
     if 'fileData' not in request.json:
         return jsonify({'message': 'No file data received'}), 400
