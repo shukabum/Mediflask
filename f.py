@@ -33,7 +33,11 @@ def extract_text_from_pdf(file_data):
     return text
 @app.route('/')
 def start():
+    return render_template("hello")
+@app.route('/dummy')
+def start():
     return render_template("index.html")
+
 
 @app.route('/upload', methods=['POST'])
 def upload_file():
